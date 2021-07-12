@@ -33,6 +33,8 @@ class Constants {
     
     static let kDate: String = "date"
     
+    static let kNumberOfMessage: Int = 12
+    
     
     // heightCell
     static let chatCellHeight: CGFloat = 100

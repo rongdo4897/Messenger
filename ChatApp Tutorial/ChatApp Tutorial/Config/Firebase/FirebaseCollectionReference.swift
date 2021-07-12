@@ -12,6 +12,7 @@ enum FirebaseCollectionReference: String {
     case user = "User"
     case recent = "Recent"
     case messages = "Messages"
+    case typing = "Typing"
 }
 
 
