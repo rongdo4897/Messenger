@@ -1,0 +1,85 @@
+/* 
+  Localizable.strings
+  ChatApp Tutorial
+
+  Created by Hoang Lam on 31/05/2021.
+  
+*/
+
+// Tabbar
+"Chats" = "Chats";
+"Channels" = "Channels";
+"Users" = "Users";
+"Settings" = "Settings";
+
+// Login , Register
+"Login" = "Login";
+"Register" = "Register";
+"Email" = "Email";
+"Password" = "Password";
+"Re - Password" = "Re - Password";
+"Forgot Password?" = "Forgot Password?";
+"Resend Email" = "Resend Email";
+"Sign up" = "Sign up";
+"Don't have an account?" = "Don't have an account?";
+"You have an account?" = "You have an account?";
+"All fields are required" = "All fields are required";
+"Email is required" = "Email is required";
+"The Passwords don't match" = "The Passwords don't match";
+"Verification email sent" = "Verification email sent";
+"Email is not verified" = "Email is not verified";
+"No document for user" = "No document for user";
+"Error decoding user" = "Error decoding user";
+"Document does not exist" = "Document does not exist";
+"Reset link sent to email" = "Reset link sent to email";
+"New verification email sent" = "New verification email sent";
+
+// setting
+"Tell A Friend" = "Tell A Friend";
+"Terms and Conditions" = "Terms and Conditions";
+"Version" = "Version";
+"Log Out" = "Log Out";
+"Enter your name and add an optional profile picture" = "Enter your name and add an optional profile picture";
+"Select status" = "Select status";
+"Edit" = "Edit";
+"Username" = "Username";
+"Profile" = "Profile";
+"Don't select image" = "Don't select image";
+"Status" = "Status";
+"Available" = "Available";
+"Busy" = "Busy";
+"At School" = "At School";
+"At The Movies" = "At The Movies";
+"At Work" = "At Work";
+"At The Gym" = "At The Gym";
+"At The Player Game" = "At The Player Game";
+"Online" = "Online";
+"Offline" = "Offline";
+"In A Meeting" = "In A Meeting";
+"Sleeping" = "Sleeping";
+"Can't Talk" = "Can't Talk";
+
+// user
+"Start Chat" = "Start Chat";
+
+// chat
+"Just now" = "Just now";
+"mins ago" = "mins ago";
+"min ago" = "min ago";
+"hours ago" = "hours ago";
+"hour ago" = "hour ago";
+"Jan" = "Jan";
+"Feb" = "Feb";
+"Mar" = "Mar";
+"Apr" = "Apr";
+"May" = "May";
+"Jun" = "Jun";
+"July" = "July";
+"Aug" = "Aug";
+"Sep" = "Sep";
+"Oct" = "Oct";
+"Nov" = "Nov";
+"Dec" = "Dec";
+"Delete" = "Delete";
+"sent" = "sent";
+"read" = "read";

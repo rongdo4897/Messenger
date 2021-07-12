@@ -1,0 +1,85 @@
+/* 
+  Localizable.strings
+  ChatApp Tutorial
+
+  Created by Hoang Lam on 31/05/2021.
+  
+*/
+
+// Tabbar
+"Chats" = "Trò chuyện";
+"Channels" = "Kênh";
+"Users" = "Người dùng";
+"Settings" = "Cài đặt";
+
+// Login , Register
+"Login" = "Đăng nhập";
+"Register" = "Đăng kí";
+"Email" = "Email";
+"Password" = "Mật khẩu";
+"Re - Password" = "Nhập lại mật khẩu";
+"Forgot Password?" = "Đổi mật khẩu?";
+"Resend Email" = "Gửi lại email";
+"Sign up" = "Đăng ký";
+"Don't have an account?" = "Bạn chưa có tài khoản?";
+"You have an account?" = "Bạn đã có tài khoản?";
+"All fields are required" = "Tất cả thuộc tính là bắt buộc";
+"Email is required" = "Email là bắt buộc";
+"The Passwords don't match" = "Mật khẩu không khớp";
+"Verification email sent" = "Đã gửi email xác minh";
+"Email is not verified" = "Email không được xác minh";
+"No document for user" = "Không có tài liệu cho người dùng";
+"Error decoding user" = "Lỗi giải mã dữ liệu người dùng";
+"Document does not exist" = "Tài liệu dữ liệu người dùng không tồn tại";
+"Reset link sent to email" = "Email thay đổi mật khẩu đã được gửi";
+"New verification email sent" = "Email xác minh đã được gửi lại";
+
+// setting
+"Tell A Friend" = "Nói chuyện với 1 người bạn";
+"Terms and Conditions" = "Điều khoản và chính sách";
+"Version" = "Phiên bản";
+"Log Out" = "Đăng xuất";
+"Enter your name and add an optional profile picture" = "Nhập tên của bạn và thêm ảnh tùy chọn";
+"Select status" = "Lựa chọn trạng thái";
+"Edit" = "Chỉnh sửa";
+"Username" = "Tài khoản";
+"Profile" = "Hồ sơ";
+"Don't select image" = "Ảnh không được chọn";
+"Status" = "Trạng thái";
+"Available" = "Rảnh";
+"Busy" = "Bận";
+"At School" = "Đang ở trường học";
+"At The Movies" = "Đang ở rạp phim";
+"At Work" = "Đang làm việc";
+"At The Gym" = "Đang ở phòng gym";
+"At The Player Game" = "Đang chơi game";
+"Online" = "Trực tuyến";
+"Offline" = "Không trực tuyến";
+"In A Meeting" = "Trong phòng họp";
+"Sleeping" = "Đang ngủ";
+"Can't Talk" = "Không thể nói chuyện";
+
+// user
+"Start Chat" = "Bắt đầu cuộc trò chuyện";
+
+// chat
+"Just now" = "Bây giờ";
+"mins ago" = "Phút trước";
+"min ago" = "Phút trước";
+"hours ago" = "Giờ trước";
+"hour ago" = "Giờ trước";
+"Jan" = "Tháng 1";
+"Feb" = "Tháng 2";
+"Mar" = "Tháng 3";
+"Apr" = "Tháng 4";
+"May" = "Tháng 5";
+"Jun" = "Tháng 6";
+"July" = "Tháng 7";
+"Aug" = "Tháng 8";
+"Sep" = "Tháng 9";
+"Oct" = "Tháng 10";
+"Nov" = "Tháng 11";
+"Dec" = "Tháng 12";
+"Delete" = "Xóa";
+"sent" = "gửi";
+"read" = "đọc";
