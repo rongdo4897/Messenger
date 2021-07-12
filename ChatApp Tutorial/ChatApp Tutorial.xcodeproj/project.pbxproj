@@ -64,6 +64,10 @@
 		6266EDCC267898AA00561691 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6266EDCA267898AA00561691 /* StatusCell.swift */; };
 		6266EDCD267898AA00561691 /* StatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6266EDCB267898AA00561691 /* StatusCell.xib */; };
 		6266EDD02678B84E00561691 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6266EDCF2678B84E00561691 /* Status.swift */; };
+		626C4E75269C2C0400E7123D /* FirebaseTypingListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626C4E74269C2C0400E7123D /* FirebaseTypingListener.swift */; };
+		626C4E77269C43A300E7123D /* UIImageView+UIImage_Gifload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626C4E76269C43A300E7123D /* UIImageView+UIImage_Gifload.swift */; };
+		626C4E7B269C49E500E7123D /* UIImageExtension_Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626C4E7A269C49E500E7123D /* UIImageExtension_Gif.swift */; };
+		626C4E7D269C4CB700E7123D /* threedots.gif in Resources */ = {isa = PBXBuildFile; fileRef = 626C4E7C269C4CB600E7123D /* threedots.gif */; };
 		626CC32A2679E4380058E76C /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626CC3292679E4380058E76C /* UITextFieldExtension.swift */; };
 		626CC32D2679F5E80058E76C /* UserDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626CC32B2679F5E80058E76C /* UserDetailCell.swift */; };
 		626CC32E2679F5E80058E76C /* UserDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 626CC32C2679F5E80058E76C /* UserDetailCell.xib */; };
@@ -142,6 +146,10 @@
 		6266EDCA267898AA00561691 /* StatusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 		6266EDCB267898AA00561691 /* StatusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusCell.xib; sourceTree = "<group>"; };
 		6266EDCF2678B84E00561691 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		626C4E74269C2C0400E7123D /* FirebaseTypingListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTypingListener.swift; sourceTree = "<group>"; };
+		626C4E76269C43A300E7123D /* UIImageView+UIImage_Gifload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+UIImage_Gifload.swift"; sourceTree = "<group>"; };
+		626C4E7A269C49E500E7123D /* UIImageExtension_Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension_Gif.swift; sourceTree = "<group>"; };
+		626C4E7C269C4CB600E7123D /* threedots.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = threedots.gif; sourceTree = "<group>"; };
 		626CC3292679E4380058E76C /* UITextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		626CC32B2679F5E80058E76C /* UserDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailCell.swift; sourceTree = "<group>"; };
 		626CC32C2679F5E80058E76C /* UserDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailCell.xib; sourceTree = "<group>"; };
@@ -187,6 +195,7 @@
 				6224082B2670A8F900B24756 /* FirebaseUserListener.swift */,
 				62E44969267B5D9100E7423C /* FirebaseRecentListener.swift */,
 				62984B932696F8EC0056BF12 /* FirebaseMessageListener.swift */,
+				626C4E74269C2C0400E7123D /* FirebaseTypingListener.swift */,
 				62633351267754AE001A9CDF /* FireStorage.swift */,
 				6266EDC1267856C900561691 /* Document.swift */,
 				62E44967267B578200E7423C /* StartChat.swift */,
@@ -272,6 +281,8 @@
 				6266EDC626788B0900561691 /* UIImageExtension.swift */,
 				626CC3292679E4380058E76C /* UITextFieldExtension.swift */,
 				62E44965267B481400E7423C /* DateExtension.swift */,
+				626C4E76269C43A300E7123D /* UIImageView+UIImage_Gifload.swift */,
+				626C4E7A269C49E500E7123D /* UIImageExtension_Gif.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -440,6 +451,7 @@
 		627AA35A267317D40085BC84 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				626C4E7C269C4CB600E7123D /* threedots.gif */,
 				626590102671FE61007667F6 /* ChatViewController.swift */,
 				6263B411267C97F0001062BA /* MessageViewController.swift */,
 			);
@@ -613,6 +625,7 @@
 				625B4ADF2660DA0700498FCE /* Assets.xcassets in Resources */,
 				6263334E26770BB9001A9CDF /* ProfileCell.xib in Resources */,
 				6265901D26720AED007667F6 /* Tabbar.storyboard in Resources */,
+				626C4E7D269C4CB700E7123D /* threedots.gif in Resources */,
 				6265902126720B10007667F6 /* Channel.storyboard in Resources */,
 				6265901F26720AFD007667F6 /* Chat.storyboard in Resources */,
 				627AA36A2673469F0085BC84 /* SettingCell.xib in Resources */,
@@ -677,6 +690,7 @@
 				6265900B2671FD9B007667F6 /* TabbarViewController.swift in Sources */,
 				62E44964267B2C2000E7423C /* RecentChat.swift in Sources */,
 				6264AFF1268071A400857FD4 /* LocalMessage.swift in Sources */,
+				626C4E7B269C49E500E7123D /* UIImageExtension_Gif.swift in Sources */,
 				626590272672247E007667F6 /* UITextContentTypeExtension.swift in Sources */,
 				626590132671FE79007667F6 /* ChannelViewController.swift in Sources */,
 				626CC32A2679E4380058E76C /* UITextFieldExtension.swift in Sources */,
@@ -693,6 +707,7 @@
 				6263335026770C80001A9CDF /* ProfileViewController.swift in Sources */,
 				6264AFF62680830600857FD4 /* OutgoingMessage.swift in Sources */,
 				6266EDC52678640200561691 /* GlobalFunctions.swift in Sources */,
+				626C4E77269C43A300E7123D /* UIImageView+UIImage_Gifload.swift in Sources */,
 				626590172671FEB0007667F6 /* SettingViewController.swift in Sources */,
 				62984B942696F8EC0056BF12 /* FirebaseMessageListener.swift in Sources */,
 				6266EDC92678987900561691 /* StatusViewController.swift in Sources */,
@@ -704,6 +719,7 @@
 				625B4B1C2664C8D100498FCE /* DictionaryExtension.swift in Sources */,
 				626333492676FEF8001A9CDF /* UserCell.swift in Sources */,
 				626158E6266640DF00A9D23B /* User.swift in Sources */,
+				626C4E75269C2C0400E7123D /* FirebaseTypingListener.swift in Sources */,
 				625B4B222664C8D100498FCE /* UIViewExtentions.swift in Sources */,
 				6266EDC726788B0900561691 /* UIImageExtension.swift in Sources */,
 				626CC3302679F9ED0058E76C /* UserDetailViewController.swift in Sources */,

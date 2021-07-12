@@ -85,4 +85,10 @@ extension FirebaseMessageListener {
                 }
             })
     }
+    
+    // xóa tiếp tục lắng nghe đoạn chat
+    func removeListener() {
+        self.newChatListener.remove()
+        self.updatedChatListener.remove()
+    }
 }
