@@ -74,7 +74,9 @@ extension FirebaseMessageListener {
                         switch result {
                         case .success(let messageObject):
                             if let message = messageObject {
-                                RealmManager.share.saveToRealm(message)
+                                if message.senderId != User.currentId {
+                                    RealmManager.share.saveToRealm(message)
+                                }
                             } else {
                                 print("Tài liệu không tồn tại")
                             }
@@ -84,6 +86,49 @@ extension FirebaseMessageListener {
                     }
                 }
             })
+    }
+    
+    // nghe để đọc thay đổi status
+    func listenForReadStatusChange(_ documentId: String, collectionId: String, completion: @escaping (_ updateMessage: LocalMessage) -> Void) {
+        
+        updatedChatListener = FirebaseReference.shared.firebaseReference(.messages)
+            .document(documentId)
+            .collection(collectionId)
+            .addSnapshotListener({ querySnapshot, error in
+                guard let snapshot = querySnapshot else {return}
+                
+                for change in snapshot.documentChanges {
+                    if change.type == .modified {
+                        let result = Result {
+                            try? change.document.data(as: LocalMessage.self)
+                        }
+                        
+                        switch result {
+                        case .success(let messageObject):
+                            if let localMessage = messageObject {
+                                completion(localMessage)
+                            } else {
+                                print("Tài liệu không tồn tại khi thay đổi trạng thái tin nhắn")
+                            }
+                        case .failure(let error):
+                            print("Lỗi khi giải mã tin nhắn khi tiến hành thay đổi trạng thái: ", error.localizedDescription)
+                        }
+                    }
+                }
+            })
+    }
+    
+    // Cập nhật lại trạng thái đã đọc cho tin nhắn ("status" = "read")
+    func updateMessageInFirebase(_ message: LocalMessage, memberIds: [String]) {
+        let values = [Constants.kStatus: Constants.kRead, Constants.kReadDate: Date()] as [String: Any]
+        
+        for userId in memberIds {
+            FirebaseReference.shared.firebaseReference(.messages)
+                .document(userId)
+                .collection(message.chatRoomId)
+                .document(message.id)
+                .updateData(values)
+        }
     }
     
     // xóa tiếp tục lắng nghe đoạn chat

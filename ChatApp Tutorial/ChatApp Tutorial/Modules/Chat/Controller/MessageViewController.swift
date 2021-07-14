@@ -30,14 +30,6 @@ class MessageViewController: MessagesViewController {
         return title
     }()
     
-    let subTitleLabel: UILabel = {
-        let title = UILabel(frame: CGRect(x: 5, y: 22, width: 180, height: 20))
-        title.textAlignment = .left
-        title.font = UIFont.systemFont(ofSize: 13, weight: .medium)
-        title.adjustsFontSizeToFitWidth = true
-        return title
-    }()
-    
     let typingGifImageView: UIImageView = {
         let gifImage = UIImage.gifImageWithName("threedots")
         let imageView = UIImageView(frame: CGRect(x: 5, y: 22, width: 30, height: 20))
@@ -84,6 +76,7 @@ class MessageViewController: MessagesViewController {
         customizeComponents()
         loadAllChats()
         listenForNewChats()
+        listenForReadStatusChange()
         createTypingObserver()
     }
     
@@ -104,6 +97,33 @@ extension MessageViewController {
         FirebaseRecentListener.share.resetRecentCounter(chatRoomId: chatId)
         removeListeners()
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func multimediaButtonTapped() {
+        messageInputBar.inputTextView.resignFirstResponder()
+        
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let takePhotoOrVideo = UIAlertAction(title: "Camera".localized(), style: .default) { _ in
+            print("show camera")
+        }
+        let shareMedia = UIAlertAction(title: "Library".localized(), style: .default) { _ in
+            print("show library")
+        }
+        let shareLocation = UIAlertAction(title: "Share Location".localized(), style: .default) { _ in
+            print("show location")
+        }
+        let cancel = UIAlertAction(title: "Cancel".localized(), style: .cancel)
+        
+        takePhotoOrVideo.setValue(UIImage(systemName: "camera"), forKey: "image")
+        shareMedia.setValue(UIImage(systemName: "photo.fill"), forKey: "image")
+        shareLocation.setValue(UIImage(systemName: "mappin.and.ellipse"), forKey: "image")
+        
+        optionMenu.addAction(takePhotoOrVideo)
+        optionMenu.addAction(shareMedia)
+        optionMenu.addAction(shareLocation)
+        optionMenu.addAction(cancel)
+        
+        present(optionMenu, animated: true, completion: nil)
     }
 }
 
@@ -167,9 +187,7 @@ extension MessageViewController {
         attachButton.image = UIImage(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30))
         attachButton.tintColor = Defined.defaultColor
         attachButton.setSize(CGSize(width: 30, height: 30), animated: false)
-        attachButton.onTouchUpInside { item in
-            print("plus")
-        }
+        attachButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(multimediaButtonTapped)))
         
         micButton.image = UIImage(systemName: "mic.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30))
         micButton.tintColor = Defined.defaultColor
@@ -249,6 +267,11 @@ extension MessageViewController {
     }
     
     private func insertMessage(_ localMessage: LocalMessage) {
+        
+        if localMessage.senderId != User.currentId {
+            markMessageAsRead(localMessage)
+        }
+        
         let incoming = IncomingMessage(_collectionView: self)
         self.mkMessages.append(incoming.createMessage(localMessage: localMessage)!)
         
@@ -279,11 +302,34 @@ extension MessageViewController {
         }
     }
     
+    //TODO: Cập nhật trạng thái đã đọc cho tin nhắn
+    private func updateMessage(_ localMessage: LocalMessage) {
+        for index in 0 ..< mkMessages.count {
+            let tempMessage = mkMessages[index]
+            
+            if localMessage.id == tempMessage.messageId {
+                mkMessages[index].status = localMessage.status
+                mkMessages[index].readDate = localMessage.readDate
+                // Lưu lại tin nhắn vào db local
+                RealmManager.share.saveToRealm(localMessage)
+                
+                if mkMessages[index].status == Constants.kRead {
+                    self.messagesCollectionView.reloadData()
+                }
+            }
+        }
+    }
+    
+    private func markMessageAsRead(_ localMessage: LocalMessage) {
+        if localMessage.senderId != User.currentId && localMessage.status != Constants.kRead {
+            FirebaseMessageListener.share.updateMessageInFirebase(localMessage, memberIds: [User.currentId, recipientId])
+        }
+    }
+    
     //TODO: Cập nhật typing khi nhập tin nhắn
     func createTypingObserver() {
         FirebaseTypingListener.share.createTypingObserver(chatRoomId: chatId) { isTyping in
             DispatchQueue.main.async {
-//                self.updateTypingIndicator(isTyping)
                 self.updateGifIndicator(isTyping)
             }
         }
@@ -307,10 +353,6 @@ extension MessageViewController {
             FirebaseTypingListener.share.saveTypingCounter(typing: false, chatRoomId: chatId)
         }
     }
-    
-//    func updateTypingIndicator(_ show: Bool) {
-//        subTitleLabel.text = show ? "typing..." : ""
-//    }
     
     private func removeListeners() {
         FirebaseTypingListener.share.removeTypingListener()
@@ -336,6 +378,14 @@ extension MessageViewController {
     // Cập nhật khi có tin nhắn mới đến
     private func listenForNewChats() {
         FirebaseMessageListener.share.listenForNewChats(User.currentId, collectionId: chatId, lastMessageDate: lastMessageDate())
+    }
+    
+    private func listenForReadStatusChange() {
+        FirebaseMessageListener.share.listenForReadStatusChange(User.currentId, collectionId: chatId) { updateMessage in
+            if updateMessage.status != Constants.kSent {
+                self.updateMessage(updateMessage)
+            }
+        }
     }
     
     //TODO: Lấy lại đoạn chat cũ trên firebase

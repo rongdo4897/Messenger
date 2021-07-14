@@ -87,4 +87,37 @@ extension FirebaseRecentListener {
                 }
             }
     }
+    
+    //TODO: Cập nhật tin nhắn cuối cùng
+    func updateRecents(chatRoomId: String, lastMessage: String) {
+        FirebaseReference.shared.firebaseReference(.recent)
+            .whereField(Constants.kChatRoomID, isEqualTo: chatRoomId)
+            .getDocuments { querySnapshot, error in
+                guard let documents = querySnapshot?.documents else {
+                    print("Không có tài liệu cập nhật gần đây")
+                    return
+                }
+                
+                let allRecents = documents.compactMap { queryDocumentSnapshot -> RecentChat? in
+                    return try? queryDocumentSnapshot.data(as: RecentChat.self)
+                }
+                
+                for recentChat in allRecents {
+                    self.updateRecentItemWithNewMessage(recent: recentChat, lastMessage: lastMessage)
+                }
+            }
+    }
+    
+    private func updateRecentItemWithNewMessage(recent: RecentChat, lastMessage: String) {
+        var tempRecent = recent
+        
+        if tempRecent.senderId != User.currentId {
+            tempRecent.unreadCounter += 1
+        }
+        
+        tempRecent.lastMessage = lastMessage
+        tempRecent.date = Date()
+        
+        self.saveRecent(tempRecent)
+    }
 }
