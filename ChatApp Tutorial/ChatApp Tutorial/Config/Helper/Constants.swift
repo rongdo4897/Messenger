@@ -24,6 +24,7 @@ class Constants {
     static let kSenderID: String = "senderId"
     static let kSent: String = "sent"
     static let kRead: String = "read"
+    static let kStatus: String = "status"
     
     static let kText: String = "text"
     static let kPhoto: String = "photo"
@@ -32,6 +33,7 @@ class Constants {
     static let kLocation: String = "location"
     
     static let kDate: String = "date"
+    static let kReadDate: String = "date"
     
     static let kNumberOfMessage: Int = 12
     

@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseFirestoreSwift
 
+// Cấu trúc tham gia chat của ng dùng
 struct RecentChat: Codable {
     var id: String?
     var chatRoomId: String?

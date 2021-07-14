@@ -34,6 +34,7 @@ extension OutgoingMessage {
         }
         
         //TODO: Gửi thông báo
+        FirebaseRecentListener.share.updateRecents(chatRoomId: chatId, lastMessage: message.message)
         
         //TODO: Cập nhật gần đây
         
