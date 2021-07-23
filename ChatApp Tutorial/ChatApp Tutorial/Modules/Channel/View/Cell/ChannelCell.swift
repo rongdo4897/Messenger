@@ -8,11 +8,11 @@
 import UIKit
 
 class ChannelCell: BaseTBCell {
-    @IBOutlet weak var imgUser: UIImageView!
+    @IBOutlet weak var imgAvatar: UIImageView!
     @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var lblText: UILabel!
-    @IBOutlet weak var lblMember: UILabel!
-    @IBOutlet weak var lblDate: UILabel!
+    @IBOutlet weak var lblAbout: UILabel!
+    @IBOutlet weak var lblMemberCount: UILabel!
+    @IBOutlet weak var lblLastMessageDate: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,12 +43,34 @@ extension ChannelCell {
     
     private func customizeImage() {
         DispatchQueue.main.async {
-            self.imgUser.layer.cornerRadius = self.imgUser.height / 2
+            self.imgAvatar.layer.cornerRadius = self.imgAvatar.height / 2
         }
     }
 }
 
 //MARK: - Các hàm chức năng
 extension ChannelCell {
-    
+    func setUpData(channel: Channel) {
+        lblName.text = channel.name
+        lblAbout.text = channel.aboutChannel
+        lblMemberCount.text = String(channel.memberIds.count) + " " + "members"
+        lblLastMessageDate.text = timeElapsed(channel.lastMessageDate ?? Date())
+        lblLastMessageDate.adjustsFontSizeToFitWidth = true
+        
+        // ảnh
+        if channel.avatarLink != "" {
+            FireStorage.share.downloadImage(imageUrl: channel.avatarLink) { image in
+                if image != nil {
+                    self.imgAvatar.image = image!.circleMasked
+                    self.imgAvatar.contentMode = .scaleAspectFit
+                } else {
+                    self.imgAvatar.image = UIImage(named: "ic_avatar")
+                    self.imgAvatar.contentMode = .scaleToFill
+                }
+            }
+        } else {
+            imgAvatar.image = UIImage(named: "ic_avatar")
+            imgAvatar.contentMode = .scaleToFill
+        }
+    }
 }

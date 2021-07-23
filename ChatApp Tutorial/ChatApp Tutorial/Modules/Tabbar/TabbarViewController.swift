@@ -18,6 +18,8 @@ class TabbarViewController: RAMAnimatedTabBarController {
     private func createTabbar() {
         let chat = RouterType.chat.getVc()
         let channel = RouterType.channel.getVc()
+        let channelNav = UINavigationController(rootViewController: channel)
+        channelNav.isNavigationBarHidden = true
         let user = RouterType.user.getVc()
         let setting = RouterType.setting.getVc()
         
@@ -37,6 +39,6 @@ class TabbarViewController: RAMAnimatedTabBarController {
         user.tabBarItem = userItem
         setting.tabBarItem = settingItem
         
-        self.viewControllers = [chat, channel, user, setting]
+        self.viewControllers = [chat, channelNav, user, setting]
     }
 }

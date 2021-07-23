@@ -106,6 +106,85 @@
             </objects>
             <point key="canvasLocation" x="-2384" y="76"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="GCR-zB-bWh">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qEN-ze-k4J" customClass="MapViewController" customModule="ChatApp_Tutorial" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jsb-oQ-gIi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCS-Az-epL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBX-Pe-AsM">
+                                        <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGP-7i-ck5">
+                                                <rect key="frame" x="182" y="10.5" width="50.5" height="35"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sx2-0n-Xcq">
+                                                <rect key="frame" x="15" y="7" width="42" height="42"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Sx2-0n-Xcq" secondAttribute="height" id="vek-Za-ahg"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <imageReference key="image" image="chevron.left" catalog="system" symbolScale="large"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="backButtonTapped:" destination="qEN-ze-k4J" eventType="touchUpInside" id="fNO-pB-S69"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Sx2-0n-Xcq" firstAttribute="leading" secondItem="XBX-Pe-AsM" secondAttribute="leading" constant="15" id="EWZ-1V-oh1"/>
+                                            <constraint firstItem="kGP-7i-ck5" firstAttribute="centerX" secondItem="XBX-Pe-AsM" secondAttribute="centerX" id="JaY-4H-zyO"/>
+                                            <constraint firstItem="Sx2-0n-Xcq" firstAttribute="centerY" secondItem="XBX-Pe-AsM" secondAttribute="centerY" id="bCj-yZ-HNB"/>
+                                            <constraint firstItem="Sx2-0n-Xcq" firstAttribute="height" secondItem="XBX-Pe-AsM" secondAttribute="height" multiplier="3/4" id="gKH-ke-wHB"/>
+                                            <constraint firstItem="kGP-7i-ck5" firstAttribute="centerY" secondItem="XBX-Pe-AsM" secondAttribute="centerY" id="kdp-Sa-gev"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="5Mz-Nf-BWe"/>
+                                    <constraint firstItem="XBX-Pe-AsM" firstAttribute="width" secondItem="VCS-Az-epL" secondAttribute="width" id="dzf-xD-Dp1"/>
+                                    <constraint firstItem="XBX-Pe-AsM" firstAttribute="centerX" secondItem="VCS-Az-epL" secondAttribute="centerX" id="efI-ud-Ecd"/>
+                                    <constraint firstAttribute="bottom" secondItem="XBX-Pe-AsM" secondAttribute="bottom" id="xeP-6V-qmu"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDQ-zB-n3Q" customClass="MKMapView">
+                                <rect key="frame" x="0.0" y="100" width="414" height="796"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1IQ-5T-j0y"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="UDQ-zB-n3Q" firstAttribute="top" secondItem="VCS-Az-epL" secondAttribute="bottom" id="4fj-zj-awJ"/>
+                            <constraint firstItem="VCS-Az-epL" firstAttribute="top" secondItem="Jsb-oQ-gIi" secondAttribute="top" id="Aby-8A-vcn"/>
+                            <constraint firstItem="1IQ-5T-j0y" firstAttribute="top" secondItem="XBX-Pe-AsM" secondAttribute="top" id="LRi-yi-c57"/>
+                            <constraint firstItem="1IQ-5T-j0y" firstAttribute="trailing" secondItem="UDQ-zB-n3Q" secondAttribute="trailing" id="bUf-xg-TiG"/>
+                            <constraint firstItem="VCS-Az-epL" firstAttribute="leading" secondItem="1IQ-5T-j0y" secondAttribute="leading" id="duX-Mc-d0e"/>
+                            <constraint firstAttribute="bottom" secondItem="UDQ-zB-n3Q" secondAttribute="bottom" id="lmZ-Py-wuD"/>
+                            <constraint firstItem="UDQ-zB-n3Q" firstAttribute="leading" secondItem="1IQ-5T-j0y" secondAttribute="leading" id="xvL-sB-XfP"/>
+                            <constraint firstItem="1IQ-5T-j0y" firstAttribute="trailing" secondItem="VCS-Az-epL" secondAttribute="trailing" id="xzz-X8-7UD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblTitle" destination="kGP-7i-ck5" id="W8h-vw-xja"/>
+                        <outlet property="mapView" destination="UDQ-zB-n3Q" id="ddc-Fs-Qh9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HSs-fs-D6V" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1322" y="76"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="Unc-4J-ChV">
@@ -113,6 +192,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

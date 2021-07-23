@@ -80,11 +80,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="imgUser" destination="o85-FL-xmZ" id="fKG-3y-kNx"/>
-                <outlet property="lblDate" destination="ltD-Mx-GvT" id="BHD-Lf-0eG"/>
-                <outlet property="lblMember" destination="iLf-xa-tbl" id="EPZ-jc-Stp"/>
+                <outlet property="imgAvatar" destination="o85-FL-xmZ" id="fKG-3y-kNx"/>
+                <outlet property="lblAbout" destination="Ri9-ia-wvU" id="eiY-TW-M2s"/>
+                <outlet property="lblLastMessageDate" destination="ltD-Mx-GvT" id="BHD-Lf-0eG"/>
+                <outlet property="lblMemberCount" destination="iLf-xa-tbl" id="EPZ-jc-Stp"/>
                 <outlet property="lblName" destination="zr6-Vp-6W6" id="ICD-jE-Y8r"/>
-                <outlet property="lblText" destination="Ri9-ia-wvU" id="eiY-TW-M2s"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="93.080357142857139"/>
         </tableViewCell>

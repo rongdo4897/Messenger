@@ -73,7 +73,7 @@ extension ChatCell {
         // Tên
         lblName.text = recent?.receiverName ?? ""
         // Tin nhắn cuối
-        lblMessage.text = recent?.lastMessage ?? ""
+        lblMessage.text = recent?.lastMessage.localized() ?? ""
         
         // Số lượng tin nhắn
         if recent?.unreadCounter != 0 {
