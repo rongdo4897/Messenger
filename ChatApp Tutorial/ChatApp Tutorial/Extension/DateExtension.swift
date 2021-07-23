@@ -31,4 +31,20 @@ extension Date {
         dateFormater.dateFormat = "HH:mm"
         return dateFormater.string(from: self)
     }
+    
+    func stringDate() -> String {
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "ddMMMyyyyHHmmss"
+        return dateFormater.string(from: self)
+    }
+    
+    // Thời lượng video
+    func interval(ofComponent comp: Calendar.Component, from date: Date) -> Float {
+        let currentCalendar = Calendar.current
+        
+        guard let start = currentCalendar.ordinality(of: comp, in: .era, for: date) else {return 0}
+        guard let end = currentCalendar.ordinality(of: comp, in: .era, for: self) else {return 0}
+        
+        return Float(start - end)
+    }
 }

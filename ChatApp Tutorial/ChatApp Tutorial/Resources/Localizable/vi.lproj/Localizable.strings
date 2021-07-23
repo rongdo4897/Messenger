@@ -8,7 +8,7 @@
 
 // Tabbar
 "Chats" = "Trò chuyện";
-"Channels" = "Kênh";
+"Channels" = "Nhóm";
 "Users" = "Người dùng";
 "Settings" = "Cài đặt";
 
@@ -83,3 +83,24 @@
 "Delete" = "Xóa";
 "sent" = "gửi";
 "read" = "đọc";
+"Camera" = "Máy ảnh";
+"Library" = "Thư viện";
+"Share Location" = "Chia sẻ vị trí";
+"Cancel" = "Hủy";
+"[* - Picture - *]" = "[* - Ảnh - *]";
+"[* - Video - *]" = "[* - Video - *]";
+"[* - Location - *]" = "[* - Vị trí - *]";
+"[* - Map - *]" = "[* - Bản đồ - *]";
+"[* - Audio - *]" = "[* - Âm thanh - *]";
+
+"Map" = "Bản đồ";
+"I'm here" = "Tôi ở đây";
+
+// Channel
+"Subscribed" = "Đã đăng ký";
+"All Channels" = "Toàn bộ nhóm";
+"My Channels" = "Nhóm của tôi";
+"New Channel" = "Nhóm mới";
+"About Channel" = "Giới thiệu về nhóm";
+"Channel Name" = "Tên nhóm";
+"Channel info" = "Thông tin nhóm";

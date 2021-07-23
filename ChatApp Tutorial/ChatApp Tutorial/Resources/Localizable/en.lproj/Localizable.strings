@@ -83,3 +83,24 @@
 "Delete" = "Delete";
 "sent" = "sent";
 "read" = "read";
+"Camera" = "Camera";
+"Library" = "Library";
+"Share Location" = "Share Location";
+"Cancel" = "Cancel";
+"[* - Picture - *]" = "[* - Picture - *]";
+"[* - Video - *]" = "[* - Video - *]";
+"[* - Location - *]" = "[* - Location - *]";
+"[* - Map - *]" = "[* - Map - *]";
+"[* - Audio - *]" = "[* - Audio - *]";
+
+"Map" = "Map";
+"I'm here" = "I'm here";
+
+// Channel
+"Subscribed" = "Subscribed";
+"All Channels" = "All Channels";
+"My Channels" = "My Channels";
+"New Channel" = "New Channel";
+"About Channel" = "About Channel";
+"Channel Name" = "Channel Name";
+"Channel info" = "Channel info";

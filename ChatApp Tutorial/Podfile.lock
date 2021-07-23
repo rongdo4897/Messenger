@@ -213,6 +213,7 @@ PODS:
     - abseil/base/config
     - abseil/meta/type_traits
   - Alamofire (5.4.3)
+  - BetterSegmentedControl (2.0.1)
   - BoringSSL-GRPC (0.0.7):
     - BoringSSL-GRPC/Implementation (= 0.0.7)
     - BoringSSL-GRPC/Interface (= 0.0.7)
@@ -422,6 +423,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - BetterSegmentedControl
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
@@ -447,6 +449,7 @@ SPEC REPOS:
   trunk:
     - abseil
     - Alamofire
+    - BetterSegmentedControl
     - BoringSSL-GRPC
     - Firebase
     - FirebaseAnalytics
@@ -488,6 +491,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  BetterSegmentedControl: 09607b27861d49cbce48b7673b74f9150a3d371a
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
   FirebaseAnalytics: 3bb096873ee0d7fa4b6c70f5e9166b6da413cc7f
@@ -526,6 +530,6 @@ SPEC CHECKSUMS:
   SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: f30a08ea672412d59e0b9e30a611081e8dba74d8
+PODFILE CHECKSUM: 8c443eb735e876799c02f3b3ed7a9d8817799311
 
 COCOAPODS: 1.10.1

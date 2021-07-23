@@ -36,5 +36,6 @@ pod 'RxSwift'
 pod 'RxCocoa'
 
 pod 'KafkaRefresh'
+pod 'BetterSegmentedControl'
 
 end

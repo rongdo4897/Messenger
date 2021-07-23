@@ -18,6 +18,9 @@ enum RouterType {
     case profile
     case status
     case userDetail
+    case map
+    case myChannels
+    case newChannel
 }
 
 extension RouterType {
@@ -49,6 +52,15 @@ extension RouterType {
             return vc
         case .userDetail:
             let vc = UIStoryboard(name: Constants.user, bundle: nil).instantiateViewController(ofType: UserDetailViewController.self)
+            return vc
+        case .map:
+            let vc = UIStoryboard(name: Constants.chat, bundle: nil).instantiateViewController(ofType: MapViewController.self)
+            return vc
+        case .myChannels:
+            let vc = UIStoryboard(name: Constants.channel, bundle: nil).instantiateViewController(ofType: MyChannelViewController.self)
+            return vc
+        case .newChannel:
+            let vc = UIStoryboard(name: Constants.channel, bundle: nil).instantiateViewController(ofType: NewChannelViewController.self)
             return vc
         }
     }
