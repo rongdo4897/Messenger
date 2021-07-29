@@ -104,3 +104,10 @@
 "About Channel" = "About Channel";
 "Channel Name" = "Channel Name";
 "Channel info" = "Channel info";
+"Couldn't select image!" = "Couldn't select image!";
+"Channel name isn't empty!" = "Channel name isn't empty!";
+"Delete channel failed!" = "Delete channel failed!";
+"Add Channel" = "Add Channel";
+"Edit Channel" = "Edit Channel";
+"Channel Detail" = "Channel Detail";
+"members" = "members";

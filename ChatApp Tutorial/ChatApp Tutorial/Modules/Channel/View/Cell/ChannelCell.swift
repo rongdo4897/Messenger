@@ -53,7 +53,7 @@ extension ChannelCell {
     func setUpData(channel: Channel) {
         lblName.text = channel.name
         lblAbout.text = channel.aboutChannel
-        lblMemberCount.text = String(channel.memberIds.count) + " " + "members"
+        lblMemberCount.text = String(channel.memberIds.count) + " " + "members".localized()
         lblLastMessageDate.text = timeElapsed(channel.lastMessageDate ?? Date())
         lblLastMessageDate.adjustsFontSizeToFitWidth = true
         

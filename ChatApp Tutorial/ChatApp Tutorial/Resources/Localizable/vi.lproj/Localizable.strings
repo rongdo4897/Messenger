@@ -64,10 +64,10 @@
 
 // chat
 "Just now" = "Bây giờ";
-"mins ago" = "Phút trước";
-"min ago" = "Phút trước";
-"hours ago" = "Giờ trước";
-"hour ago" = "Giờ trước";
+"mins ago" = "phút trước";
+"min ago" = "phút trước";
+"hours ago" = "giờ trước";
+"hour ago" = "giờ trước";
 "Jan" = "Tháng 1";
 "Feb" = "Tháng 2";
 "Mar" = "Tháng 3";
@@ -104,3 +104,10 @@
 "About Channel" = "Giới thiệu về nhóm";
 "Channel Name" = "Tên nhóm";
 "Channel info" = "Thông tin nhóm";
+"Couldn't select image!" = "Không thể chọn ảnh!";
+"Channel name isn't empty!" = "Tên nhóm không được rỗng!";
+"Delete channel failed!" = "Lỗi khi xóa nhóm!";
+"Add Channel" = "Thêm nhóm";
+"Edit Channel" = "Sửa nhóm";
+"Channel Detail" = "Chi tiết nhóm";
+"members" = "thành viên";

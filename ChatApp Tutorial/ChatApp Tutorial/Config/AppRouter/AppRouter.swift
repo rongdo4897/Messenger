@@ -21,6 +21,7 @@ enum RouterType {
     case map
     case myChannels
     case newChannel
+    case channelDetail
 }
 
 extension RouterType {
@@ -61,6 +62,9 @@ extension RouterType {
             return vc
         case .newChannel:
             let vc = UIStoryboard(name: Constants.channel, bundle: nil).instantiateViewController(ofType: NewChannelViewController.self)
+            return vc
+        case .channelDetail:
+            let vc = UIStoryboard(name: Constants.channel, bundle: nil).instantiateViewController(ofType: ChannelDetailViewController.self)
             return vc
         }
     }

@@ -21,6 +21,7 @@ class ChannelViewController: UIViewController {
         super.viewDidLoad()
         initComponents()
         customizeComponents()
+        downloadChannels()
     }
     
     @IBAction func segmentChannelValueChange(_ sender: BetterSegmentedControl) {
@@ -63,8 +64,16 @@ extension ChannelViewController {
             
             if tableView == tblSubcribedChannel {
                 tableView.isHidden = false
+                
+                tableView.bindHeadRefreshHandler({
+                    self.downloadSubscribedChannels()
+                }, themeColor: Defined.defaultColor, refreshStyle: .replicatorTriangle)
             } else {
                 tableView.isHidden = true
+                
+                tableView.bindHeadRefreshHandler({
+                    self.downloadAllChannels()
+                }, themeColor: Defined.defaultColor, refreshStyle: .replicatorTriangle)
             }
         }
     }
@@ -88,7 +97,34 @@ extension ChannelViewController {
 
 //MARK: - Các hàm chức năng
 extension ChannelViewController {
+    private func downloadChannels() {
+        downloadSubscribedChannels()
+        downloadAllChannels()
+    }
     
+    private func downloadSubscribedChannels() {
+        FirebaseChannelListener.share.downloadSubscribedChannels { channels in
+            self.subscribedChannels = channels
+            
+            DispatchQueue.main.async {
+                self.tblSubcribedChannel.reloadData()
+                self.tblSubcribedChannel.headRefreshControl.endRefreshing()
+                self.view.endEditing(true)
+            }
+        }
+    }
+    
+    private func downloadAllChannels() {
+        FirebaseChannelListener.share.downloadAllChannels { channels in
+            self.allChannels = channels
+            
+            DispatchQueue.main.async {
+                self.tblAllChannel.reloadData()
+                self.tblAllChannel.headRefreshControl.endRefreshing()
+                self.view.endEditing(true)
+            }
+        }
+    }
 }
 
 //MARK: - TableView
@@ -130,6 +166,15 @@ extension ChannelViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        switch tableView {
+        case tblSubcribedChannel:
+            print(1)
+        case tblAllChannel:
+            guard let vc = RouterType.channelDetail.getVc() as? ChannelDetailViewController else {return}
+            vc.channel = allChannels[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
     }
 }

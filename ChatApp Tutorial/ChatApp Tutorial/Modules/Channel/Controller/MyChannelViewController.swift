@@ -12,10 +12,13 @@ class MyChannelViewController: UIViewController {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var tblChannel: UITableView!
     
+    var myChannels: [Channel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initComponents()
         customizeComponents()
+        downloadUserChannels()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,6 +32,7 @@ class MyChannelViewController: UIViewController {
     
     @IBAction func btnAddTapped(_ sender: Any) {
         guard let vc = RouterType.newChannel.getVc() as? NewChannelViewController else {return}
+        vc.channelToEdit = nil
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -62,23 +66,38 @@ extension MyChannelViewController {
 //MARK: - Customize
 extension MyChannelViewController {
     private func customizeComponents() {
-        
+        FirebaseChannelListener.share.downloadUserChannelsFromFirebase { allChannels in
+            self.myChannels = allChannels
+            
+            DispatchQueue.main.async {
+                self.tblChannel.reloadData()
+            }
+        }
     }
 }
 
 //MARK: - Các hàm chức năng
 extension MyChannelViewController {
-    
+    private func downloadUserChannels() {
+        FirebaseChannelListener.share.downloadUserChannelsFromFirebase { allChannels in
+            self.myChannels = allChannels
+            
+            DispatchQueue.main.async {
+                self.tblChannel.reloadData()
+            }
+        }
+    }
 }
 
 //MARK: - TableView
 extension MyChannelViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return myChannels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = ChannelCell.loadCell(tableView) as? ChannelCell else {return UITableViewCell()}
+        cell.setUpData(channel: myChannels[indexPath.row])
         return cell
     }
     
@@ -86,7 +105,27 @@ extension MyChannelViewController: UITableViewDataSource, UITableViewDelegate {
         return 120
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let channel = myChannels[indexPath.row]
+            
+            AlertUtil.showAlertConfirm(from: self, with: "Delete".localized() + ":" + " \(channel.name)" + " ?", message: "") { _ in
+                FirebaseChannelListener.share.deleteChannel(channel)
+                self.myChannels.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
+        guard let vc = RouterType.newChannel.getVc() as? NewChannelViewController else {return}
+        vc.channelToEdit = myChannels[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

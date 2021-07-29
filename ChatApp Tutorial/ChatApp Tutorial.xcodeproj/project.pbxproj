@@ -82,12 +82,17 @@
 		627AA36626731EC60085BC84 /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 627AA36426731EC60085BC84 /* ChatCell.xib */; };
 		627AA3692673469F0085BC84 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627AA3672673469F0085BC84 /* SettingCell.swift */; };
 		627AA36A2673469F0085BC84 /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 627AA3682673469F0085BC84 /* SettingCell.xib */; };
+		6283563626B2A07900C55918 /* ChannelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6283563526B2A07900C55918 /* ChannelDetailViewController.swift */; };
+		6283563926B2A1FB00C55918 /* ChannelDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6283563726B2A1FB00C55918 /* ChannelDetailCell.swift */; };
+		6283563A26B2A1FB00C55918 /* ChannelDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6283563826B2A1FB00C55918 /* ChannelDetailCell.xib */; };
+		6283563C26B2A6B600C55918 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6283563B26B2A6B600C55918 /* UINavigationControllerExtension.swift */; };
 		62870DFB26AA71A200422F61 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62870DFA26AA71A200422F61 /* Channel.swift */; };
 		62870DFD26AAA0C000422F61 /* MyChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62870DFC26AAA0C000422F61 /* MyChannelViewController.swift */; };
 		62870DFF26AAA4D300422F61 /* NewChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62870DFE26AAA4D300422F61 /* NewChannelViewController.swift */; };
 		62870E0226AAA79300422F61 /* NewChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62870E0026AAA79300422F61 /* NewChannelCell.swift */; };
 		62870E0326AAA79300422F61 /* NewChannelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62870E0126AAA79300422F61 /* NewChannelCell.xib */; };
 		6289AB1826A824AE001CB148 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6289AB1726A824AE001CB148 /* AudioRecorder.swift */; };
+		628A234526AE70E300CA810F /* FirebaseChannelListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628A234426AE70E300CA810F /* FirebaseChannelListener.swift */; };
 		62984B942696F8EC0056BF12 /* FirebaseMessageListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62984B932696F8EC0056BF12 /* FirebaseMessageListener.swift */; };
 		629AB59A26A9567D00B1CA21 /* AudioMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AB59926A9567D00B1CA21 /* AudioMessage.swift */; };
 		629AB59C26A9614600B1CA21 /* BasicAudioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629AB59B26A9614600B1CA21 /* BasicAudioController.swift */; };
@@ -178,12 +183,17 @@
 		627AA36426731EC60085BC84 /* ChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
 		627AA3672673469F0085BC84 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		627AA3682673469F0085BC84 /* SettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
+		6283563526B2A07900C55918 /* ChannelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelDetailViewController.swift; sourceTree = "<group>"; };
+		6283563726B2A1FB00C55918 /* ChannelDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelDetailCell.swift; sourceTree = "<group>"; };
+		6283563826B2A1FB00C55918 /* ChannelDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelDetailCell.xib; sourceTree = "<group>"; };
+		6283563B26B2A6B600C55918 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		62870DFA26AA71A200422F61 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		62870DFC26AAA0C000422F61 /* MyChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChannelViewController.swift; sourceTree = "<group>"; };
 		62870DFE26AAA4D300422F61 /* NewChannelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChannelViewController.swift; sourceTree = "<group>"; };
 		62870E0026AAA79300422F61 /* NewChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChannelCell.swift; sourceTree = "<group>"; };
 		62870E0126AAA79300422F61 /* NewChannelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewChannelCell.xib; sourceTree = "<group>"; };
 		6289AB1726A824AE001CB148 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
+		628A234426AE70E300CA810F /* FirebaseChannelListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseChannelListener.swift; sourceTree = "<group>"; };
 		62984B932696F8EC0056BF12 /* FirebaseMessageListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMessageListener.swift; sourceTree = "<group>"; };
 		629AB59926A9567D00B1CA21 /* AudioMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioMessage.swift; sourceTree = "<group>"; };
 		629AB59B26A9614600B1CA21 /* BasicAudioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAudioController.swift; sourceTree = "<group>"; };
@@ -224,6 +234,7 @@
 				62E44969267B5D9100E7423C /* FirebaseRecentListener.swift */,
 				62984B932696F8EC0056BF12 /* FirebaseMessageListener.swift */,
 				626C4E74269C2C0400E7123D /* FirebaseTypingListener.swift */,
+				628A234426AE70E300CA810F /* FirebaseChannelListener.swift */,
 				62633351267754AE001A9CDF /* FireStorage.swift */,
 				62E44967267B578200E7423C /* StartChat.swift */,
 			);
@@ -310,6 +321,7 @@
 				62E44965267B481400E7423C /* DateExtension.swift */,
 				626C4E76269C43A300E7123D /* UIImageView+UIImage_Gifload.swift */,
 				626C4E7A269C49E500E7123D /* UIImageExtension_Gif.swift */,
+				6283563B26B2A6B600C55918 /* UINavigationControllerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -398,6 +410,8 @@
 				626333432676FCAE001A9CDF /* ChannelCell.xib */,
 				62870E0026AAA79300422F61 /* NewChannelCell.swift */,
 				62870E0126AAA79300422F61 /* NewChannelCell.xib */,
+				6283563726B2A1FB00C55918 /* ChannelDetailCell.swift */,
+				6283563826B2A1FB00C55918 /* ChannelDetailCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -516,6 +530,7 @@
 				626590122671FE79007667F6 /* ChannelViewController.swift */,
 				62870DFC26AAA0C000422F61 /* MyChannelViewController.swift */,
 				62870DFE26AAA4D300422F61 /* NewChannelViewController.swift */,
+				6283563526B2A07900C55918 /* ChannelDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -724,6 +739,7 @@
 				625B4ADF2660DA0700498FCE /* Assets.xcassets in Resources */,
 				6263334E26770BB9001A9CDF /* ProfileCell.xib in Resources */,
 				6265901D26720AED007667F6 /* Tabbar.storyboard in Resources */,
+				6283563A26B2A1FB00C55918 /* ChannelDetailCell.xib in Resources */,
 				626C4E7D269C4CB700E7123D /* threedots.gif in Resources */,
 				6265902126720B10007667F6 /* Channel.storyboard in Resources */,
 				6265901F26720AFD007667F6 /* Chat.storyboard in Resources */,
@@ -795,6 +811,7 @@
 				626590272672247E007667F6 /* UITextContentTypeExtension.swift in Sources */,
 				626590132671FE79007667F6 /* ChannelViewController.swift in Sources */,
 				62870DFB26AA71A200422F61 /* Channel.swift in Sources */,
+				628A234526AE70E300CA810F /* FirebaseChannelListener.swift in Sources */,
 				626CC32A2679E4380058E76C /* UITextFieldExtension.swift in Sources */,
 				62633352267754AE001A9CDF /* FireStorage.swift in Sources */,
 				625B4ADA2660DA0300498FCE /* LoginViewController.swift in Sources */,
@@ -841,6 +858,8 @@
 				625B4B3C2664CCC400498FCE /* BaseTBCell.swift in Sources */,
 				627AA36526731EC60085BC84 /* ChatCell.swift in Sources */,
 				62E44966267B481400E7423C /* DateExtension.swift in Sources */,
+				6283563626B2A07900C55918 /* ChannelDetailViewController.swift in Sources */,
+				6283563926B2A1FB00C55918 /* ChannelDetailCell.swift in Sources */,
 				62870DFF26AAA4D300422F61 /* NewChannelViewController.swift in Sources */,
 				6264CAFF269EF4FB00A0409C /* VideoMessage.swift in Sources */,
 				6263B412267C97F0001062BA /* MessageViewController.swift in Sources */,
@@ -850,6 +869,7 @@
 				6264AFF426807B6400857FD4 /* RealmManager.swift in Sources */,
 				625B4B1D2664C8D100498FCE /* UIColor+StringExtentions.swift in Sources */,
 				627AA3692673469F0085BC84 /* SettingCell.swift in Sources */,
+				6283563C26B2A6B600C55918 /* UINavigationControllerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1001,7 +1021,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3LCCS7YAZ3;
+				DEVELOPMENT_TEAM = 79M2K68L4S;
 				INFOPLIST_FILE = "ChatApp Tutorial/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1022,7 +1042,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3LCCS7YAZ3;
+				DEVELOPMENT_TEAM = 79M2K68L4S;
 				INFOPLIST_FILE = "ChatApp Tutorial/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (

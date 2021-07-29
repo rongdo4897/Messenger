@@ -87,6 +87,15 @@ extension FireStorage {
         }
     }
     
+//    func removeImage(_ imageDirectory: String) {
+//        let storageRef = storage.reference(forURL: Constants.fireStorageReference).child(imageDirectory)
+//        
+//        storageRef.delete { error in
+//            print(error)
+//        }
+//    }
+    
+    // Lưu local
     func saveFileLocally(fileData: NSData, fileName: String) {
         let documentUrl = Document.share.getDocumentsURL().appendingPathComponent(fileName, isDirectory: false)
         fileData.write(to: documentUrl, atomically: true)
