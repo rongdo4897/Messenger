@@ -35,6 +35,9 @@ class Constants {
     static let kDate: String = "date"
     static let kReadDate: String = "date"
     
+    static let kAdminId: String = "adminId"
+    static let kMemberIds: String = "memberIds"
+    
     static let kNumberOfMessage: Int = 12
     
     
